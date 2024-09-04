@@ -16,7 +16,7 @@ meta_data = {
 disable_jm_log()
 
 
-def get_domain_ls():
+def get_all_domain():
     template = 'https://jmcmomic.github.io/go/{}.html'
     url_ls = [
         template.format(i)
@@ -39,9 +39,9 @@ def get_domain_ls():
     return domain_set
 
 
-domain_set = get_domain_ls()
-domain_status_dict = {}
+domain_set = get_all_domain()
 print(f'获取到{len(domain_set)}个域名，开始测试')
+domain_status_dict = {}
 
 
 def test_domain(domain: str):
@@ -67,3 +67,15 @@ for domain, status in domain_status_dict.items():
 
 ```
 
+# 程序输出示例
+
+```text
+获取到7个域名，开始测试
+18comic.vip: ok
+18comic.org: ok
+18comic-palworld.vip: ok
+18comic-c.art: ok
+jmcomic1.me: ok
+jmcomic.me: ok
+18comic-palworld.club: ok
+```
